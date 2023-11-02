@@ -4,10 +4,16 @@ head
     title Network App project
     link(rel="stylesheet", href="index.css")
 body 
-div.container
-    h1=title 
+.container
+    h1 #{title}
     form.todo-form(action="/", method="post") 
         label.todo-label(for="todo") ToDo
         input.todo-input(name="todo" type="text")
         input.todo-input-submit(type="submit", value="Submit") 
-  
+    
+    .task 
+        - for(let i = 0; i < 2; i++){
+        .check-task
+            input.task-check(type="checkbox" name="check")
+            label.task-label(for="check") aaaa
+        - }

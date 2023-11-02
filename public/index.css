@@ -45,3 +45,7 @@ color: {
     border-radius: 1rem;
     box-shadow: 3px 3px 3px #807767;
 }
+
+.task{
+    display: block;
+}

@@ -13,7 +13,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res)=>{
     res.render('index.jade',{
-        title: "My Network App project!!!"
+        title: "My Network App project!!!",
+        numoftask: 1
     });
 });
 
