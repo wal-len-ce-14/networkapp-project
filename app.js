@@ -7,12 +7,12 @@ const port = 8080;
 
 app = express();
 // app.use('/', express.static(path.join(__dirname, 'html')));
-app.set('views', path.join(__dirname));
+app.set('views', path.join(__dirname, "webpage"));
 app.set('view engine', 'jade');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res)=>{
-    // page = fs.readFileSync('public/index.html');
-    res.render('webpage/index.jade',{
+    res.render('index.jade',{
         title: "My Network App project!!!"
     });
 });

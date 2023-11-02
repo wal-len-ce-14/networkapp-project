@@ -1,0 +1,47 @@
+/*
+color: {
+    #FFFCFF ,
+    #247BA0 ,
+    #d6c7b1 ,
+    #807767
+}
+*/
+
+.container{
+    width: 50rem;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    color: #807767;
+}
+
+.todo-form{
+    color: #FFFCFF;
+    background-color: #d6c7b1;
+    margin: 2rem;
+    padding: 0.1rem 1rem;
+    border-radius: 1rem;
+}
+
+.todo-label{
+    color: #807767;
+    margin: 0.5rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px  #FFFCFF;
+}
+
+.todo-input{
+    height: 1.2rem;
+    font-size: 1.3rem;
+    box-shadow: 2px 2px 3px #807767;
+}
+
+.todo-input-submit{
+    color: #FFFCFF;
+    background-color: #247BA0;
+    margin: 0.5rem 0.8rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px #807767;
+}
