@@ -1,3 +1,10 @@
 # networkapp-project
 ---
 ### 網路應用程式 暫定為購物平台
+
+### 步驟
+> 1. npm install express --save
+> 2. npm install nodemon -> [無法使用解決連結](https://www.twblogs.net/a/5edbd82cfa12b627653c409d)
+> 3. npm install jade --save
+
+
