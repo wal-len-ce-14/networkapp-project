@@ -2,7 +2,7 @@
   "name": "networkapp-project",
   "version": "1.0.0",
   "description": "final-report",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wal-len-ce-14/networkapp-project#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jade": "^1.11.0"
   }
 }
