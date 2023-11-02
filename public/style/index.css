@@ -46,6 +46,10 @@ color: {
     box-shadow: 3px 3px 3px #807767;
 }
 
+#hint{
+    color: #247BA0;
+}
+
 .task{
     display: block;
 }
