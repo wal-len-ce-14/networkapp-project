@@ -40,5 +40,13 @@ router.post('/', (req, res)=> {
     
 })
 
+router.get('/delete/:task', (req,res)=>{
+    const d_task = req.params.task
+    taskJson.task.splice(d_task,1)
+    console.log(taskJson.task)
+    res.redirect('/');
+    fs.writeFileSync(taskfile, JSON.stringify(taskJson, null, 2), 'utf8')
+})
+
 
 module.exports = router

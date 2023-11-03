@@ -15,7 +15,7 @@ body
             - for(let i = tasks.length-1; i >= 0; i--){
                 .task(style="background-color: rgb(#{10*i+25},80,#{240-10*i});")
                     p.taskname #{tasks[i]}
-                    form.done-form(action="/", method="post") 
+                    form.done-form(action="/delete/#{i}", method="get") 
                         input.done-submit(type="submit", value="Finish") 
             - }
 
