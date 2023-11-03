@@ -59,8 +59,28 @@ color: {
 }
 
 .task{
+    color: #FFFCFF;
     width: 25rem;
     margin-bottom: 0.5rem;
     border-radius: 1rem;
     box-shadow: 3px 3px 3px #807767;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.taskname{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.done-submit{
+    color: #807767;
+    font-weight: 600;
+    background-color: b0dbfffb;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px #807767;
+    height: 2rem;
+    opacity: 0.8;
+}
+

@@ -22,7 +22,7 @@ router.post('/', (req, res)=> {
     
 
     let task = "Add " + req.body.todo
-    if(task != "Add ") {
+    if(task != "Add " && req.body.todo != null) {
         taskJson.task.push(req.body.todo)
         // 
         console.log(taskJson)
