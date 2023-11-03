@@ -4,13 +4,17 @@ head
     title Network App project
     link(rel="stylesheet", href="style/index.css")
 body 
-.container
-    h1 #{title}
-    form.todo-form(action="/", method="post") 
-        label.todo-label(for="todo") ToDo
-        input.todo-input#taskname(name="todo" type="text")
-        input.todo-input-submit#addtask(type="submit", value="Submit") 
-    h3#hint #{addthing}
-    .task#taskContainer
+    .container
+        h1 #{title}
+        form.todo-form(action="/", method="post") 
+            label.todo-label(for="todo") ToDo
+            input.todo-input#taskname(name="todo" type="text")
+            input.todo-input-submit#addtask(type="submit", value="Submit") 
+        h3#hint #{addthing}
+        .tasks#taskContainer
+            - for(let i = tasks.length-1; i >= 0; i--){
+                .task(style="background-color: rgb(#{10*i+25},80,#{240-10*i});")
+                    p #{tasks[i]}
+            - }
 
 script(src="javascribe/index.js") 
