@@ -16,7 +16,7 @@ body
                 .task(style="background-color: rgb(#{10*i+25},80,#{240-10*i});")
                     p.taskname #{tasks[i]}
                     form.done-form(action="/delete/#{i}", method="get") 
-                        input.done-submit(type="submit", value="Finish") 
+                        input.done-submit(type="submit", value="Finish" style="border-color: rgb(#{10*i+25},80,#{240-10*i});") 
             - }
 
 script(src="javascribe/index.js") 

@@ -7,6 +7,10 @@ color: {
     #807767     深灰
 }
 */
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: #FFFCFF;
 }
@@ -87,8 +91,10 @@ body{
     font-weight: 600;
     background-color: #FFFCFF;
     border-radius: 1rem;
-    box-shadow: 3px 3px 3px #807767;
-    height: 4rem;
-    opacity: 0.7;
+    height: 3.5rem;
+    opacity: 1;
+    border: 0.3rem solid;
+    border-left: 0.5rem solid;
+    box-shadow: 3px 3px 3px #807767 inset;
 }
 
