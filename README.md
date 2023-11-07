@@ -9,4 +9,4 @@
 
 ### 在cmd > nodemon app.js > chrome > http://localhost:8080/ > 起始畫面
 
-
+### 直接npm install electron 後 ==> npm start 
