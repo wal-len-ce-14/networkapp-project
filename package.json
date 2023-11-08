@@ -2,9 +2,11 @@
   "name": "networkapp-project",
   "version": "1.0.0",
   "description": "final-report",
-  "main": "app.js",
+  "main": "main_2.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",    
+    "start": "electron ."
+    
   },
   "repository": {
     "type": "git",
