@@ -1,60 +1,43 @@
-const { app, BrowserWindow } = require('electron');
-const express = require('express');
-const path = require('path');
-const homepage = require('./router/homepage');
-
-let mainWindow;
-
+const {app, BrowserWindow } = require('electron')
 function createWindow() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    webPreferences: {
-      nodeIntegration: true,
-    },
-  });
+    // express
+    // Create the browser window.
+    var loadingWindow = new BrowserWindow({
+        width:          200,
+        height:         200,
+        transparent:    (process.platform != 'linux'), // Transparency doesn't work on Linux.
+        resizable:      false,
+        frame:          false,
+        alwaysOnTop:    true,
+        hasShadow:      false,
+        title:          "Loading..."
+    });
+    loadingWindow.loadURL('file://' + __dirname + '/appearance/loadingAnimation.gif');
 
-  // Load your Express app
-  const expressApp = express();
-  expressApp.set('views', path.join(__dirname, 'webpage'));
-  expressApp.set('view engine', 'jade');
-  expressApp.use(express.static(path.join(__dirname, 'public')));
-  expressApp.use(express.urlencoded({ extended: false }));
-  expressApp.use(express.json());
-  expressApp.use('/', homepage);
+    var win = new BrowserWindow({
+        icon: __dirname + 'appearance/check.ico',
+        show: false,
+        width: 1000,  // 寬度
+        height: 650, // 高度
+        closable: true, // 可否點擊關閉按鈕
+        // frame: false,          // 標題列不顯示
+        // transparent: true,     // 背景透明
+        autoHideMenuBar: true,  // 工具列不顯示
+    });
 
-  mainWindow.loadURL('http://localhost:8080');
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
-
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    mainWindow = null;
-  });
-
-  // Start Express server
-  const server = expressApp.listen(8080, () => {
-    console.log('Express app is listening on port 8080...');
-  });
-
-  // Quit the app when the main window is closed
-  mainWindow.on('closed', () => {
-    server.close(); // Close the Express server
-    app.quit(); // Quit the Electron app
-  });
+    win.loadURL('http://localhost:8080/');
+    win.once('ready-to-show', () => {
+        win.show();
+        loadingWindow.close();
+    })
+    win.on('closed', () => {
+        win = null;
+    })
+    module.exports = win;
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-app.whenReady().then(createWindow);
+app.on('ready', createWindow);
+app.on('activate', createWindow)
+app.on('window-all-closed', () => app.quit())
 
-// Quit when all windows are closed, except on macOS.
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') app.quit();
-});
 
-app.on('activate', function () {
-  if (mainWindow === null) createWindow();
-});
