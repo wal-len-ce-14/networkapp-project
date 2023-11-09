@@ -1,6 +1,5 @@
-const {app, BrowserWindow } = require('electron')
-function createWindow() {
-    // express
+const {app, BrowserWindow } = require('electron') 
+function createWindow() { 
     // Create the browser window.
     var loadingWindow = new BrowserWindow({
         width:          200,
