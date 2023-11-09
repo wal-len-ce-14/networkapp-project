@@ -1,5 +1,5 @@
 const {app, BrowserWindow } = require('electron')
-const express = require("./server")
+// const express = require("./server")
 
 function createWindow() {
     // express
@@ -24,12 +24,11 @@ function createWindow() {
         closable: true, // 可否點擊關閉按鈕
         // frame: false,          // 標題列不顯示
         // transparent: true,     // 背景透明
-        // autoHideMenuBar: true,  // 工具列不顯示
+        autoHideMenuBar: true,  // 工具列不顯示
     });
-    // win.loadURL('https://www.google.com'); // 載入頁面 www.google.com
-    win.webContents.openDevTools();
+
     win.loadURL('http://localhost:8080/');
-    win.on('ready-to-show', () => {
+    win.once('ready-to-show', () => {
         win.show();
         loadingWindow.close();
     })
