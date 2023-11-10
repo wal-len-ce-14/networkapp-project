@@ -4,27 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style/index_elec.css">
+  
   <title>Document</title>
 </head>
 
-
 <body>
-  <div class="container">
-    <h1><%=title%></h1>
-    <form action="/todo" method="post" class="todo-form">
+  <div class="container" style="-webkit-app-region: drag;">
+    <form action="/todo_electron" method="post" class="todo-form">
       <label for="todo" class="todo-label">ToDo</label>
       <input type="text" name="todo" class="todo-input" id="taskname">
       <input type="submit" , value="Submit" class="todo-input-submit" id="addtask">
     </form>
-    <%if(typeof(addthing) != "undefined") { %>
-        <h3 id="hint"> <%= addthing %></h3>
-    <% } %>
-    <div class="tasks" id="taskContainer">
-      <% tasks.forEach((task, idx) => { %>
+      <div class="tasks" id="taskContainer">
+      <% tasks.reverse().forEach((task, idx) => { %>
       <div class="task">
         <p class="taskname"><%= task %></p>
-        <form class="done-form" action="/todo/delete/<%= idx %>" , method="get">
+        <form class="done-form" action="/todo_electron/delete/<%= idx %>" , method="get">
           <input class="done-submit" type="submit" , value="Finish">
         </form>
       </div>
@@ -33,6 +30,7 @@
 
   </div>
   <script src="javascribe/index.js"></script>
+  
 </body>
 
 </html>
