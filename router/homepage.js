@@ -4,24 +4,33 @@ const path = require("path");
 const router = express.Router();
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
-router.use(express.static(path.join(__dirname, 'public')));
+// router.use(express.static(path.join(__dirname, 'public')));
 
 const taskfile = 'mytask/task.json'
 const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
 
-
 router.get('/', (req, res)=>{
-    
-    res.render('index.jade',{
+    // router.engine('ejs', engine);
+    express().set('view engine', 'ejs');
+    res.render('index.ejs',{
         title: "My Network App project!!!",
         tasks: taskJson.task
     });
     
 });
 
-router.post('/', (req, res)=> {
+// router.get('/', (req, res)=>{
+//     express().set('view engine', 'jade');
+//     res.render('index.jade',{
+//         title: "My Network App project!!!",
+//         tasks: taskJson.task
+//     });
     
+// });
 
+router.post('/', (req, res)=> {
+    // express().set('view engine', 'jade');
+    express().set('view engine', 'ejs');
     let task = "Add " + req.body.todo
     if(task != "Add " && req.body.todo != null) {
         taskJson.task.push(req.body.todo)
@@ -31,7 +40,7 @@ router.post('/', (req, res)=> {
         task = "Task cannot be blank"
     }   
 
-    res.status(200).render('index.jade',{
+    res.status(200).render('index.ejs',{
         title: "My Network App project!!!",
         addthing: `${task}`,
         tasks: taskJson.task
@@ -42,6 +51,7 @@ router.post('/', (req, res)=> {
 })
 
 router.get('/delete/:task', (req,res)=>{
+    express().set('view engine', 'jade');
     const d_task = req.params.task
     taskJson.task.splice(d_task,1)
     console.log(taskJson.task)

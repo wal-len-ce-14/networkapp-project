@@ -64,6 +64,7 @@ color: {
 }
 
 .tasks{
+    margin-top: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,6 +72,7 @@ color: {
 
 .task{
     color: #FFFCFF;
+    background-color: '';
     width: 25rem;
     margin-bottom: 0.5rem;
     border-radius: 1rem;

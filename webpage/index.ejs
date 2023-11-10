@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/index.css">
+  <title>Document</title>
+</head>
+
+
+<body>
+  <div class="container">
+    <h1><%=title%></h1>
+    <form action="/" method="post" class="todo-form">
+      <label for="todo" class="todo-label">ToDo</label>
+      <input type="text" name="todo" class="todo-input" id="taskname">
+      <input type="submit" , value="Submit" class="todo-input-submit" id="addtask">
+    </form>
+    <%if(typeof(addthing) != "undefined") { %>
+        <h3 id="hint"> <%= addthing %></h3>
+    <% } %>
+    <div class="tasks" id="taskContainer">
+      <% tasks.forEach((task, idx) => { %>
+      <div class="task">
+        <p class="taskname"><%= task %></p>
+        <form class="done-form" action="/delete/<%= idx %>" , method="get">
+          <input class="done-submit" type="submit" , value="Finish">
+        </form>
+      </div>
+      <% }) %>
+    </div>
+
+  </div>
+  <script src="javascribe/index.js"></script>
+</body>
+
+</html>
