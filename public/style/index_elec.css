@@ -48,6 +48,17 @@ body::-webkit-scrollbar {
     -webkit-app-region: no-drag;
 }
 
+#taskdescribe{
+    display: none;
+    background-color: #FFFCFF;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 3px #807767;
+    opacity: 0.7;
+    margin: 0.8rem auto;
+    font-size: 1.3rem;
+    -webkit-app-region: no-drag;
+}
+
 .todo-input-submit{
     color: #FFFCFF;
     background-color: #247BA0;

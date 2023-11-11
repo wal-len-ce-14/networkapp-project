@@ -14,8 +14,10 @@
     <h1><%=title%></h1>
     <form action="/todo" method="post" class="todo-form">
       <label for="todo" class="todo-label">ToDo</label>
-      <input type="text" name="todo" class="todo-input" id="taskname">
+      <input type="text" name="todo" placeholder="task title" class="todo-input" id="taskname">
       <input type="submit" , value="Submit" class="todo-input-submit" id="addtask">
+      <textarea name="taskdescribe" id="taskdescribe" placeholder="describe" cols="50" rows="10"></textarea>
+      
     </form>
     <%if(typeof(addthing) != "undefined") { %>
         <h3 id="hint"> <%= addthing %></h3>
