@@ -4,7 +4,6 @@ const path = require("path");
 const router = express.Router();
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
-// router.use(express.static(path.join(__dirname, 'public')));
 
 const taskfile = 'mytask/task.json'
 const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
@@ -48,6 +47,9 @@ router.get('/delete/:task', (req,res)=>{
     res.redirect('/todo');
     fs.writeFileSync(taskfile, JSON.stringify(taskJson, null, 2), 'utf8')
 })
+
+taskpage = require("./taskpage")
+router.use('/todo', taskpage)
 
 
 module.exports = router
