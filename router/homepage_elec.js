@@ -19,7 +19,11 @@ router.post('/', (req, res)=> {
     express().set('view engine', 'ejs');
     let task = "Add " + req.body.todo
     if(task != "Add " && req.body.todo != null) {
-        taskJson.task.push(req.body.todo)
+        let task_info = {
+            "title": req.body.todo,
+            "describe": req.body.taskdescribe
+        }
+        taskJson.task.push(task_info)
         // 
         console.log(taskJson)
     }else {
@@ -44,5 +48,7 @@ router.get('/delete/:task', (req,res)=>{
     fs.writeFileSync(taskfile, JSON.stringify(taskJson, null, 2), 'utf8')
 })
 
+taskpage = require("./taskpage")
+router.use('/todo/task', taskpage)
 
 module.exports = router

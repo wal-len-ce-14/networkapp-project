@@ -21,7 +21,7 @@
       <div class="tasks" id="taskContainer">
       <% for(let idx = tasks.length-1; idx >= 0; idx--){ %>
       <div class="task">
-        <p class="taskname"><%= tasks[idx] %></p>
+        <p class="taskname"><%= tasks[idx].title %></p>
         <form class="done-form" action="/todo_electron/delete/<%= idx %>" , method="get">
           <input class="done-submit" type="submit" , value="Finish">
         </form>
