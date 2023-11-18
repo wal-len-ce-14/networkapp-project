@@ -11,15 +11,26 @@ tododescribe.addEventListener('blur', ()=>{
 
 
 let tasks = document.querySelectorAll('.task')
+let tasks_electron = document.querySelectorAll('tasks_electron')
 let doneSubmit = document.querySelectorAll('.done-submit')
 
 tasks.forEach((task, idx) => {
     task.style.backgroundColor = `rgb(${10*idx+25},80, ${240-10*idx} )`
     doneSubmit[idx].style.borderColor = `rgb(${10*idx+25},80, ${240-10*idx} )`
     task.addEventListener('click', ()=>{
-        window.location.href = `/todo/task?taskid=${tasks.length-idx-1}`;
+        window.location.href = `/todo/task?taskid=${idx}`;
     })
 });
+
+tasks_electron.forEach((task, idx) => {
+    task.style.backgroundColor = `rgb(${10*idx+25},80, ${240-10*idx} )`
+    doneSubmit[idx].style.borderColor = `rgb(${10*idx+25},80, ${240-10*idx} )`
+    task.addEventListener('click', ()=>{
+        window.location.href = `/todo/task?taskid=${tasks_electron.length-idx-1}`;
+    })
+});
+
+
 
 
 

@@ -18,7 +18,7 @@
       <input type="submit" , value="Submit" class="todo-input-submit" id="addtask">
       <textarea name="taskdescribe" id="taskdescribe" placeholder="describe" cols="30" rows="7"></textarea>
     </form>
-      <div class="tasks" id="taskContainer">
+      <div class="tasks_electron" id="taskContainer">
       <% for(let idx = tasks.length-1; idx >= 0; idx--){ %>
       <div class="task">
         <p class="taskname"><%= tasks[idx].title %></p>

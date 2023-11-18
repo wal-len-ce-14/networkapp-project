@@ -6,9 +6,10 @@ router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
 const taskfile = 'mytask/task.json'
-const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
+// const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
 
 router.get('/', (req, res)=>{
+    const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
     express().set('view engine', 'ejs');
     res.render('index_elec.ejs',{
         tasks: taskJson.task
@@ -16,6 +17,7 @@ router.get('/', (req, res)=>{
 });
 
 router.post('/', (req, res)=> {
+    const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
     express().set('view engine', 'ejs');
     let task = "Add " + req.body.todo
     if(task != "Add " && req.body.todo != null) {
@@ -40,6 +42,7 @@ router.post('/', (req, res)=> {
 })
 
 router.get('/delete/:task', (req,res)=>{
+    const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
     express().set('view engine', 'ejs');
     const d_task = req.params.task
     taskJson.task.splice(d_task,1)

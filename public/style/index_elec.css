@@ -75,7 +75,7 @@ body::-webkit-scrollbar {
     opacity: 0.9;
 }
 
-.tasks{
+.tasks_electron{
     margin-top: 0.8rem;
     display: flex;
     flex-direction: column;
