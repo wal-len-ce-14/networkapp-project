@@ -2,7 +2,7 @@
   "task": [
     {
       "title": "機器學習",
-      "describe": "寫作業"
+      "describe": "不寫作業"
     },
     {
       "title": "你好",
@@ -10,7 +10,15 @@
     },
     {
       "title": "go home",
-      "describe": "rgwrgw4"
+      "describe": "go home back"
+    },
+    {
+      "title": "here",
+      "describe": "快一點"
+    },
+    {
+      "title": "here",
+      "describe": "沒事"
     }
   ]
 }

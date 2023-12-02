@@ -6,19 +6,26 @@
     <link rel="stylesheet" href="/style/taskpage.css" />
     <title>Document</title>
   </head>
-  <body>
+  <!-- 在 body 中加入返回鍵的連結 -->
+<body>
     <div class="container">
-      <div id="tasktitle">
-        <h3><%= title %></h3>
-      </div>
-      <div class="taskdescribe">
-        <p id="describe"><%= describe %></p>
-      </div>
-      <form action="/todo/task/edit", method="post">
-        <textarea name="edit-describe" class="edit-textarea" cols="30" rows="10"><%= describe %></textarea>
-        <button class="done-edit" type="submit">編輯</button>
-      </form>
+        <div class="header">
+            <a href="/todo" class="back-button">返回</a>
+            <div id="tasktitle">
+                <h3><%= title %></h3>
+            </div>
+        </div>
+        <div class="taskdescribe">
+            <p>原本內容為：</p>
+            <p id="describe"><%= describe %></p>
+        </div>
+        <form action="/todo/task" method="post">
+            <p>更新內容：</p>
+            <textarea name="editdescribe" class="edit-textarea" cols="70" rows="10"><%= describe %></textarea>
+            <button class="done-edit" type="submit">編輯</button>
+        </form>
     </div>
-  </body>
+</body>
+
   <script src="/javascribe/taskpage.js"></script>
 </html>
