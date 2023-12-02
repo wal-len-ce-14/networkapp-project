@@ -18,11 +18,9 @@ router.post('/', (req, res)=>{
     express().set('view engine', 'ejs');
     const editdescribe = req.body.editdescribe;
 
-    // console.log(taskid);
     taskJson.task[taskid].describe = editdescribe;
     fs.writeFileSync(taskfile, JSON.stringify(taskJson, null, 2), 'utf8');
-    console.log(taskJson);
-    console.log(editdescribe);
+    console.log(taskJson.task[taskid]);
     res.redirect('/');
 
 })
