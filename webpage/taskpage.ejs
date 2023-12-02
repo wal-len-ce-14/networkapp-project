@@ -14,6 +14,10 @@
       <div class="taskdescribe">
         <p id="describe"><%= describe %></p>
       </div>
+      <form action="/todo/task/edit", method="post">
+        <textarea name="edit-describe" class="edit-textarea" cols="30" rows="10"><%= describe %></textarea>
+        <button class="done-edit" type="submit">編輯</button>
+      </form>
     </div>
   </body>
   <script src="/javascribe/taskpage.js"></script>
