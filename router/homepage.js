@@ -55,6 +55,14 @@ router.get('/delete/:task', (req,res)=>{
     fs.writeFileSync(taskfile, JSON.stringify(taskJson, null, 2), 'utf8')
 })
 
+router.get('/json', (req,res)=>{
+    const taskJson = JSON.parse(fs.readFileSync(taskfile, 'utf8'));
+    // res.send('123');
+    // console.log('123')
+    res.json(taskJson);
+})
+
+
 taskpage = require("./taskpage")
 router.use('/todo/task', taskpage)
 

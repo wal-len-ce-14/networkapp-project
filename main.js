@@ -20,15 +20,11 @@ function createWindow() {
         title: "ToDo",
         icon: __dirname + '/appearance/check.ico',
         show: false,
-        width: 500,  // 寬度
-        height: 300, // 高度
-        closable: true, // 可否點擊關閉按鈕
-        frame: false,          // 標題列不顯示
-        transparent: true,     // 背景透明
-        autoHideMenuBar: true,  // 工具列不顯示
+        width: 1080,  // 寬度
+        height: 720, // 高度
     });
 
-    win.loadURL('http://localhost:8080/todo_electron');
+    win.loadURL('http://localhost:8080/');
     win.once('ready-to-show', () => {
         win.show();
         loadingWindow.close();
