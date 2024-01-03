@@ -1,7 +1,9 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+    background-image: url('canadian-dollar.webp');
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 
 .container {

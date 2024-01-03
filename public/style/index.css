@@ -11,9 +11,11 @@ color: {
     box-sizing: border-box;
 }
 
-/* body{
-    background-color: #FFFCFF;
-} */
+body{
+    background-image: url('canadian-dollar.webp');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
 
 .container{
     width: 50rem;
